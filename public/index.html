@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gohan File - Administrador de Archivos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gohan File</h1>
+            <p>Sube tus archivos de forma rápida y sencilla</p>
+        </header>
+
+        <main>
+            <div id="drop-area">
+                <form class="my-form">
+                    <p>Arrastra y suelta archivos aquí o haz clic para seleccionar</p>
+                    <input type="file" id="fileElem" multiple accept="*" onchange="handleFiles(this.files)">
+                    <label class="button" for="fileElem">Seleccionar archivos</label>
+                </form>
+                <progress id="progress-bar" max=100 value=0></progress>
+                <div id="gallery"></div>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <h3>Archivos subidos:</h3>
+                <div id="file-list"></div>
+                <a href="/" class="button">Subir más</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Gohan File | Inspirado en uguu.se</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
